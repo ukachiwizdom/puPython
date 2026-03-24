@@ -1,7 +1,5 @@
-
-
-
-# Write a program 
+# Write a program to conduct a multiple choice quiz 
+# and calculate the score of the user
 q1 = """
 Read and choose the correct option
 Q1: One of the folloiwng is the importance of balance diet
@@ -15,7 +13,7 @@ Read and choose the correct option
 Q2: Food is important for man's survival
 A. True
 B. Not Important
-c. False
+C. False
 """
 
 q3 = """
@@ -23,37 +21,32 @@ Read and choose the correct option
 Q3: We eat because we want to fight people
 A. Yes
 B. Possible
-c. No
+C. No
 """
 
+
 def multiplechoice():
-    a = (input(q1 + " Input the correct option: ")).upper()
+    a = input(q1 + " Input the correct option: ").upper()
     b = input(q2 + " Input the correct option: ").upper()
     c = input(q3 + " Input the correct option: ").upper()
     
+    score = 0
+    
     # Check the answers
     if a == "A":
-        return("Correct Answer")
-    else:
-        return("Incorrect Answer")  
+        score += 1
     
     if b == "A":
-        return("Correct Answer")
-    else:
-        return("Incorrect Answer")  
-   
+        score += 1
+    
     if c == "C":
-        return("Correct Answer")
+        score += 1
     else:
-        return("Incorrect Answer")  
-  
- r = "Correct Answer":
-         
-print(multiplechoice())
-
-def percentage():
-for r in ({a}, {b}, {c}):
-    return(r / 3 * 100)
-
-
-print("Your score is:", percentage)
+        return ("Incorrect Option")
+    
+    percentage = round((score / 3) * 100, 2)
+    return score, percentage
+gr = input("Your Name: ")
+hr = input("Your Student Number: ")      
+score, percentage = multiplechoice()
+print(f"{gr} with student number {hr} your score is: {percentage} %")
